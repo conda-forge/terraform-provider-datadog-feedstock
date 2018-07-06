@@ -1,10 +1,10 @@
 {% set provider= "DataDog" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
-{% set sha256 = "5ffc2a71fd545ac73504d1db549584bc01c52a327ffc75c47df5315f8120eba5" %}
+{% set sha256 = "f40de987b25abb0c5023e1ac22c52b07ad4a039b4c4623d22d14bba132f1b0a3" %}
 {% set sha256_win32 = "ed13cf198f256caa7e8e1f015c8dc28756d1a2394d2a3d50da20a86feb2494f7" %}
 {% set sha256_win64 = "e385ced9255b4bbf43e7f66f7962557d0946930f5caac401707b6370cdd65e38" %}
 
