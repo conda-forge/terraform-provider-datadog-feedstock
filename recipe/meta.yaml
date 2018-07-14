@@ -1,12 +1,8 @@
-{% set provider= "DataDog" %}
+{% set provider = "DataDog" %}
 {% set version = "1.0.4" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
-
-{% set sha256 = "f40de987b25abb0c5023e1ac22c52b07ad4a039b4c4623d22d14bba132f1b0a3" %}
-{% set sha256_win32 = "ed13cf198f256caa7e8e1f015c8dc28756d1a2394d2a3d50da20a86feb2494f7" %}
-{% set sha256_win64 = "e385ced9255b4bbf43e7f66f7962557d0946930f5caac401707b6370cdd65e38" %}
 
 package:
   name: {{ name|lower }}
@@ -15,13 +11,11 @@ package:
 source:
   url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
   fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: {{ sha256 }}  # [not win]
+  sha256: ee07541de98d2efe898a8347399b1809138805a71390cf4cadd7b7da669b507c  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
   url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
   fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: {{ sha256_win32 }}  # [win32]
-  sha256: {{ sha256_win64 }}  # [win64]
+  sha256: f40de987b25abb0c5023e1ac22c52b07ad4a039b4c4623d22d14bba132f1b0a3  # [win64]
 
 build:
   number: 0
@@ -46,7 +40,7 @@ about:
   license: MPL 2.0
   summary: The Terraform {{ provider }} provider
   doc_url: https://www.terraform.io/docs/providers/{{ provider|lower }}/index.html
-  dev_url: https://https://github.com/terraform-providers/{{ name }}
+  dev_url: https://github.com/terraform-providers/{{ name }}
 
 extra:
   recipe-maintainers:
