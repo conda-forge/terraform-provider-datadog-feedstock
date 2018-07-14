@@ -24,9 +24,9 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}  # [not win]
     - go 1.8.*  # [not win]
     - make  # [not win]
-    - toolchain  # [not win]
   run:
     - terraform >=0.10
 
