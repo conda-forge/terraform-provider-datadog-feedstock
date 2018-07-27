@@ -9,23 +9,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: ee07541de98d2efe898a8347399b1809138805a71390cf4cadd7b7da669b507c  # [not win]
+  - folder: src/github.com/terraform-providers/{{ name|lower }}
+    url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+    sha256: ee07541de98d2efe898a8347399b1809138805a71390cf4cadd7b7da669b507c  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-  fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: f40de987b25abb0c5023e1ac22c52b07ad4a039b4c4623d22d14bba132f1b0a3  # [win64]
+    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+    sha256: f40de987b25abb0c5023e1ac22c52b07ad4a039b4c4623d22d14bba132f1b0a3  # [win64]
 
 build:
-  number: 0
+  number: 1
   script:
-    - XCOPY {{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
+    - XCOPY src\github.com\terraform-providers\{{ name|lower }}\{{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - go 1.8.*  # [not win]
+    - {{ compiler('go') }}  # [not win]
     - make  # [not win]
   run:
     - terraform >=0.10
