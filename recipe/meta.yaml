@@ -1,5 +1,5 @@
 {% set provider = "DataDog" %}
-{% set version = "1.3.0" %}
+{% set version = "1.6.0" %}
 
 {% set name = "terraform-provider-" + provider.lower() %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
@@ -11,10 +11,10 @@ package:
 source:
   - folder: src/github.com/terraform-providers/{{ name|lower }}
     url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: 714e4ea80e9ff7534388ad6f0e44455eeeab76e7c2efe26a2ff14a5679eb05a5  # [not win]
+    sha256: b96d0a70d64a34e834b67cb3524a27552b37652d97d2aa41dd1f7665264ed3b5  # [not win]
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: c9c2c7e4644516d8055031743659ad6e1e8378535fde7f5416916613e2966b4d  # [win64]
+    sha256: 803dc4cceeefe996145a6edcbae0c86c5d2d87df504115bee34fabecbb3b66eb  # [win64]
 
 build:
   number: 0
