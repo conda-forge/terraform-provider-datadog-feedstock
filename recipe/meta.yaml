@@ -1,6 +1,6 @@
 {% set provider = "DataDog" %}
 {% set goname = "github.com/terraform-providers/terraform-provider-"+provider.lower() %}
-{% set version = "2.11.0" %}
+{% set version = "2.12.0" %}
 
 {% set name = goname.split('/')[-1] %}
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: 0e62296b0b713436a61d0b3044af360ebed6cf499bfe60be0f18dd534ed3ed5e
+  sha256: 865f71a710466d1cb091b84e1707418b8790637f25689c05d475065b6388b890
 
 build:
   number: 0
